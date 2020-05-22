@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>datdota</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="dota 2 stats, dota 2 statistics, pro dota, professional dota, history dota, dota 2, dota" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#C48BC4"> <!-- Chrome, Firefox OS and Opera -->
+  <meta name="msapplication-navbutton-color" content="#C48BC4"> <!-- Windows Phone -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#C48BC4"> <!-- iOS Safari -->
+
+  
+  <meta property="og:title" content="datdota - Professional Dota Statistics" />
+  <meta property="og:description" content="Explore rich statistics for professional Dota 2 matches" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="/images/logo/icon-180x180.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <script src="/js/vendor/csi.js"></script> <!-- TODO: delete file later, this is just for html injection to separate partials -->
+  <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="/js/plugins.js"></script>
+  <script src="/js/main.js"></script>
+  
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Data Tables -->
+  <script src="https://datdota.com/insp/js/plugins/dataTables/datatables.min.js"></script>
+  <script src="https://datdota.com/insp/js/plugins/dataTables/datdota.js"></script>
+  <script src="https://cdn.datatables.net/fixedcolumns/3.2.2/js/dataTables.fixedColumns.min.js"></script>
+  <link href="https://cdn.datatables.net/fixedcolumns/3.2.2/css/fixedColumns.dataTables.min.css" rel="stylesheet">
+
+
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+
+  <!-- iCheck -->
+  <link href="/css/vendor/icheck/custom.css" rel="stylesheet">
+
+  <!-- Select2 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+  <!-- Range Slider -->
+  <script src="/js/vendor/ion/rangeSlider.min.js"></script>
+  <link href="/css/vendor/ion/rangeSlider.css" rel="stylesheet">
+  <link href="/css/vendor/ion/rangeSlider.skinFlat.css" rel="stylesheet">
+
+  <!-- Date Picker -->
+  <script src="/js/vendor/datepicker/bootstrap-datepicker.js"></script>
+  <link href="/css/vendor/datepicker/datepicker3.css" rel="stylesheet">
+
+  <h2>Elements</h2>
+  <!-- Add elements -->
+  <p>
+    <h3>Date Range</h3>
+    <div data-include="/html/filters/date-range.html"></div>
+    <script>
+      $(document).ready(function(){
+        setTimeout(function() {
+          $('#before').datepicker({
+            startView: 2,
+            format: "dd/mm/yyyy",
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            todayHighlight: true
+          });
+
+          $('#after').datepicker({
+            startView: 2,
+            format: "dd/mm/yyyy",
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            todayHighlight: true
+          }); 
+        }, 1000);     
+      });
+
+    </script>
+  </p>
+
+  <h2>Table</h2>
+  <p>
+    <div data-include="/html/data-table.html"></div>
+  </p>
+
+
+  <script>
+    $(document).ready(function(){
+      setTimeout(function() {
+        $('#data-table-example').DataTable({
+          dom: '<"html5buttons"B>lTfgitp',
+          pageLength: 25,
+          order: [[1, 'desc']],
+          fixedColumns: true,
+          scrollX: true,
+          buttons: [
+          { extend: 'copy' },
+          { extend: 'pdf', orientation: 'landscape' }
+          ]
+
+        });  
+      }, 1000);     
+    });
+  </script>
+
+  <!-- add Google Analytics -->
+</body>
+
+</html>

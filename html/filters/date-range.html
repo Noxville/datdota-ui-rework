@@ -1,0 +1,37 @@
+<div class="col-md-5">
+	<div class="form-group">
+		<label>After Date <small class="text-navy">Inclusive</small></label><br>
+		<div class="input-group date">
+			<span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="after" name="after" type="text" class="form-control" value="01/01/2011">
+		</div>
+	</div>
+</div>
+<div class="col-md-5">
+	<div class="form-group">
+		<label>Before Date <small class="text-navy">Inclusive</small></label><br>
+		<div class="input-group date">
+			<span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="before" name="before" type="text" class="form-control" value="22/05/2020">
+		</div>
+</div>
+
+<script>
+	$('#before').datepicker({
+        startView: 2,
+        format: "dd/mm/yyyy",
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        autoclose: true,
+        todayHighlight: true
+    });
+
+    $('#after').datepicker({
+        startView: 2,
+        format: "dd/mm/yyyy",
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        autoclose: true,
+        todayHighlight: true
+    });
+</script>
